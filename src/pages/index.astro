@@ -1,0 +1,219 @@
+---
+import Layout from '~/layouts/PageLayout.astro';
+
+import Header from '~/components/widgets/Header.astro';
+import Hero2 from '~/components/widgets/Hero2.astro';
+import Content from '~/components/widgets/Content.astro';
+import celosasLogo from '../assets/favicons/deiman-logo.png';
+import Item1 from '../assets/images/item-1.png';
+import nenaPng from '../assets/images/nena.png';
+
+import { headerData } from '~/navigation';
+import Features2 from '~/components/widgets/Features2.astro';
+import ContentCarousel from '~/components/ui/ContentCarousel.astro';
+
+const metadata = {
+  title: 'Inicio - DEIMAN',
+};
+---
+
+<Layout metadata={metadata}>
+  <Fragment slot="header">
+    <Header
+      {...headerData}
+      actions={[
+        {
+          variant: 'primary',
+          text: 'Contacto',
+          href: '/contact',
+        },
+      ]}
+      isSticky
+    />
+  </Fragment>
+
+  <!-- Hero2 Widget ******************* -->
+
+  <ContentCarousel/>
+
+  <Hero2
+    tagline="La más rica a toda hora 🎶"
+    actions={[
+      { variant: 'primary', target: '_blank', text: 'Contacto', href: '/contact' },
+      { text: 'Conocenos!', href: '/about' },
+    ]}
+    image={{
+      src: Item1,
+      alt: 'AstroWind Hero Image',
+    }}
+  >
+    <div class="relative">
+      <!-- Imagen flotante de la chica -->
+      <img
+        class="absolute top-0 left-1/2 transform -translate-x-1/2 w-48 drop-shadow-lg animate-float"
+        src={nenaPng.src}
+        alt="Chica sobrepuesta"
+      />
+    </div>
+
+    <Fragment slot="title">
+      Bienvenidos al Nuevo sitio web oficial de <br />
+      <span class="text-accent dark:text-white highlight inline-flex items-center">
+        Galletitas
+        <img class="w-40 ml-2" src={celosasLogo.src} alt="logo Galletitas Celosas" />
+      </span>
+    </Fragment>
+
+    <Fragment slot="subtitle">
+      <span class="hidden sm:inline"> Por <span class="font-semibold">Montenievas SRL</span></span>
+    </Fragment>
+  </Hero2>
+
+  <!-- Features Widget **************** -->
+  <Content
+    title="Innovación y tradición en cada Galletita"
+    subtitle="​En Celosas combinamos calidad, innovación y pasión por el sabor. Desde la selección de ingredientes hasta el empaquetado, cada galletita pasa por estrictos controles para garantizar frescura y excelencia. Descubrí el proceso que asegura la mejor experiencia en cada bocado."
+    isReversed
+    items={[
+      {
+        title: 'Compromiso con la excelencia',
+        description:
+          'Cada detalle de nuestra producción está pensado para garantizar un producto de calidad superior. La combinación de tecnología de vanguardia con procesos perfeccionados a lo largo del tiempo nos permite ofrecer galletitas con el sabor y la textura que nos caracteriza.',
+      },
+      {
+        title: 'La precisión como estándar',
+        description: `Nuestro proceso de elaboración es el resultado de una sinergia perfecta entre innovación y cuidado artesanal. <br /> Desde la selección de ingredientes hasta el control de cada etapa, nos aseguramos de mantener un equilibrio ideal entre tradición y modernidad. <br /> Un producto pensado para los paladares más exigentes.`,
+      },
+    ]}
+    media={{
+      video: '/videos/video1.mp4',
+      alt: 'video Produccion 1',
+    }}
+  >
+    <Fragment slot="content">
+      <h3 class="text-2xl font-bold tracking-tight dark:text-white sm:text-3xl mb-2">
+        Un estándar de calidad <br /><span class="text-2xl">que se refleja en cada paso</span>
+      </h3>
+    </Fragment>
+
+    <Fragment slot="bg">
+      <div class="absolute inset-0 bg-blue-50 dark:bg-transparent"></div>
+    </Fragment>
+  </Content>
+
+  <!-- Content Widget **************** -->
+
+  <Content
+    isAfterContent={true}
+    items={[
+      {
+        title: 'Ingredientes seleccionados',
+        description: `Elaboramos nuestras galletitas con materias primas de la más alta calidad, asegurando un equilibrio perfecto de sabor y textura. <br /> Cada etapa de la producción es supervisada para garantizar la consistencia que nos distingue.`,
+      },
+      {
+        title: 'Tecnología y pasión',
+        description: `Nuestra planta de producción combina maquinaria avanzada con el toque distintivo que nos hace únicos. <br /> Un proceso donde cada detalle está optimizado para brindarte un producto irresistible, con la garantía de calidad Celosas.`,
+      },
+    ]}
+    media={{
+      video: '/videos/video2.mp4',
+      alt: 'Video Producción 2',
+    }}
+  >
+    <Fragment slot="content">
+      <h3 class="text-2xl font-bold tracking-tight dark:text-white sm:text-3xl mb-2">
+        La calidad se ve <br /><span class="text-2xl">y se disfruta en cada bocado</span>
+      </h3>
+    </Fragment>
+
+    <Fragment slot="bg">
+      <div class="absolute inset-0 bg-blue-50 dark:bg-transparent"></div>
+    </Fragment>
+  </Content>
+
+  <!-- Content Widget **************** -->
+
+  <Content
+    isReversed
+    isAfterContent={true}
+    items={[
+      {
+        title: 'Garantía de frescura',
+        description: `Nuestro sistema de envasado está diseñado para conservar la textura y el sabor inigualable de nuestras galletitas. <br /> Un proceso automatizado que asegura la higiene y la integridad de cada producto hasta llegar a vos.`,
+      },
+      {
+        title: 'Compromiso con la confianza',
+        description: `Cada paquete de Celosas es el reflejo de nuestro compromiso con la calidad y la seguridad. <br /> Supervisamos cada lote con estrictos controles para que disfrutes de un producto confiable, con la frescura y el sabor que nos caracterizan.`,
+      },
+    ]}
+    media={{
+      video: '/videos/video3.mov',
+      alt: 'video producción 3',
+    }}
+  >
+    <Fragment slot="content">
+      <h3 class="text-2xl font-bold tracking-tight dark:text-white sm:text-3xl mb-2">
+        Calidad y confianza <br /><span class="text-2xl">en cada paquete</span>
+      </h3>
+    </Fragment>
+
+    <Fragment slot="bg">
+      <div class="absolute inset-0 bg-blue-50 dark:bg-transparent"></div>
+    </Fragment>
+  </Content>
+
+  <section class="py-10 px-4 max-w-6xl mx-auto text-center">
+    <h2 class="text-3xl font-bold mb-2">¿Dónde estamos?</h2>
+    <p class="text-lg mb-6 text-gray-600">Guatambú 1364, Parque Industrial de Burzaco, Buenos Aires - Argentina</p>
+
+    <div class="w-full h-[400px] rounded-xl overflow-hidden shadow-lg border">
+      <iframe
+        title="Ubicación en Google Maps"
+        width="100%"
+        height="100%"
+        frameborder="0"
+        style={{ border: 0 }}
+        allowfullscreen
+        loading="lazy"
+        referrerpolicy="no-referrer-when-downgrade"
+        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d13116.233183995716!2d-58.383746599999996!3d-34.82089605!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x95bcc45c8b6b4e4d%3A0x8f4c82b42327b661!2sGuatamb%C3%BA%201364%2C%20Burzaco%2C%20Provincia%20de%20Buenos%20Aires!5e0!3m2!1ses!2sar!4v1711202058907!5m2!1ses!2sar"
+      ></iframe>
+    </div>
+  </section>
+
+  <Features2
+    title="¡Estamos para ayudarte!"
+    items={[
+      {
+        title: 'Atención general',
+        description:
+          'Consultanos sobre gestión de cuentas, navegación del sitio, problemas de pago, acceso a productos o cualquier otra duda general sobre nuestro servicio.',
+      },
+      {
+        title: 'Consultas de ventas',
+        description:
+          'Estamos disponibles para consultas sobre compras, opciones de personalización, licencias comerciales o cualquier pregunta relacionada con nuestros productos.',
+      },
+      {
+        title: 'Soporte técnico',
+        description:
+          'Si tenés problemas con la instalación de plantillas, edición, compatibilidad o descargas, nuestro equipo técnico está listo para ayudarte.',
+      },
+      {
+        title: 'Teléfono',
+        description: '+54 (11) 1234-5678',
+        icon: 'tabler:headset',
+      },
+      {
+        title: 'Correo electrónico',
+        description: 'info@montenievas.com',
+        icon: 'tabler:mail',
+      },
+      {
+        title: 'Ubicación',
+        description: 'Buenos Aires, Argentina',
+        icon: 'tabler:map-pin',
+      },
+    ]}
+  />
+</Layout>

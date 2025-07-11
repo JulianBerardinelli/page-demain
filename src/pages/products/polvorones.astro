@@ -1,0 +1,29 @@
+---
+import Layout from '~/layouts/PageLayout.astro';
+import ProductCard from '~/components/widgets/ProductCard.astro';
+
+const metadata = {
+  title: 'Galletitas Polvorones',
+};
+---
+
+<Layout metadata={metadata}>
+  <ProductCard
+    title="Galletitas Polvorones"
+    description=" Galletitas dulces y crujientes con un delicioso sabor a vainilla, que las convierte en el mejor compañero para cualquier momento del día."
+    images={[
+      '/images/products/polvorones2.jpg',
+      '/images/products/polvorones.jpg',
+      '/images/products/envase-polvoron.jpg',
+      '/images/products/caja-polvorones.jpg',
+
+    ]}
+    alt="Galletitas Celosas Polvorones"
+    link="/contact"
+  >
+  CAJA DE 10 PAQUETES DE 120G C/U <br> CAJA DE 30 PAQUETES DE 380 G C/U <br> GRANEL X 4 KG
+</ProductCard>
+<div class="max-w-6xl mx-auto px-4 py-16 pt-0 pl-0 flex md:flex-row gap-10">
+  <img class="w-[600px] max-w-full h-auto" src="/images/products/tablas-nutricionales/polvorones-tabla.jpg" alt="Tabla Nutricional Galletitas Polvorones">
+</div>
+</Layout>

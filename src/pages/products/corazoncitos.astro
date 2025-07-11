@@ -1,0 +1,30 @@
+---
+import Layout from '~/layouts/PageLayout.astro';
+import ProductCard from '~/components/widgets/ProductCard.astro';
+
+const metadata = {
+  title: 'Galletitas Corazoncitos',
+};
+---
+
+<Layout metadata={metadata}>
+  <ProductCard
+    title="Galletitas Corazoncitos"
+    description="Con intenso sabor a naranja y baño completo de nuestro más puro chocolate, estas galletitas se robarán tu corazón. Su combinación de cítrico y dulce la hace ideal para los amantes de los gustos equilibrados."
+    images={[
+      '/images/products/corazones.jpg',
+      '/images/products/envase-corazon.jpg',
+      '/images/products/caja-corazones.jpg',
+
+    ]}
+    alt="Galletitas Celosas Corazoncitos"
+    link="/contact"
+  >
+  CAJA DE 30 PAQUETES DE 100G C/U <br>
+  CAJA DE 12 PAQUETES DE 260 G C/U <br>
+  GRANEL X 4 KG
+</ProductCard>
+<div class="max-w-6xl mx-auto px-4 py-16 pt-0 pl-0 flex md:flex-row gap-10">
+  <img class="w-[600px] max-w-full h-auto" src="/images/products/tablas-nutricionales/corazoncitos-tabla.jpg" alt="Tabla Nutricional Galletitas Corazoncitos">
+</div>
+</Layout>

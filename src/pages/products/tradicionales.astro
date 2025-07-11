@@ -1,0 +1,31 @@
+---
+import Layout from '~/layouts/PageLayout.astro';
+import ProductCard from '~/components/widgets/ProductCard.astro';
+
+const metadata = {
+  title: 'Galletitas Celosas Tradicionales',
+};
+---
+
+<Layout metadata={metadata}>
+  <ProductCard
+    title="Galletitas Celosas"
+    description="Nuestras galletitas más aclamadas, con su característica forma de bananita y un irresistible semi baño de chocolate las convierten en la mejor opción para los desayunos, meriendas, y disfrutar a toda hora."
+    images={[
+      '/images/products/tradicionales2.jpg',
+      '/images/products/tradicionales.jpg',
+      '/images/products/envase-tradicionales.jpg',
+      '/images/products/caja-tradicional.jpg',
+    ]}
+    alt="Galletitas Tradicionales Celosas"
+    link="/contact"
+  >
+  CAJA DE 30 PAQUETES DE 110 G C/U <br>
+  CAJA DE 15 PAQUETES DE 230G C/U <br>
+  CAJA DE 10 PAQUETES DE 350G C/U <br>
+  GRANEL X 4 KG
+</ProductCard>
+<div class="max-w-6xl mx-auto px-4 py-16 pt-0 pl-0 flex md:flex-row gap-10">
+  <img class="w-[600px] max-w-full h-auto" src="/images/products/tablas-nutricionales/tradicionales-tabla.jpg" alt="Tabla Nutricional Galletitas Tradicionales">
+</div>
+</Layout>
